@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe PostcodeAnywhere do
 
+  before :each do
+    @acc_code = "XXXXX00000"
+    @lic_code = "AA00-BB11-CC22-DD33"
+  end
+
   describe "the PostcodeAnywhere initializer" do
 
     it "takes an options hash as its argument" do
@@ -25,8 +30,7 @@ describe PostcodeAnywhere do
     end
 
     it "should configure itself from the options hash" do
-      acc_code = "XXXXX00000"
-      PostcodeAnywhere.new(:account_code => acc_code).account_code.should eq acc_code
+      PostcodeAnywhere.new(:account_code => @acc_code).account_code.should eq @acc_code
     end
 
   end
@@ -42,8 +46,24 @@ describe PostcodeAnywhere do
     end
 
     it "should configure itself from the options hash" do
-      lic_key = "AA00-BB11-CC22-DD33"
-      PostcodeAnywhere.new(:license_code => lic_key).license_code.should eq lic_key
+      @lic_code = "AA00-BB11-CC22-DD33"
+      PostcodeAnywhere.new(:license_code => @lic_code).license_code.should eq @lic_code
+    end
+
+  end
+
+  describe "the PostcodeAnywhere lookup_uri method" do
+
+    it "should be implemented" do
+      PostcodeAnywhere.new.should respond_to(:lookup_uri).with(0).arguments
+    end
+
+    it "should include the account code" do
+      PostcodeAnywhere.new(:account_code => @acc_code).lookup_uri.should match /account_code=#{@acc_code}/
+    end
+
+    it "should include the license code" do
+      PostcodeAnywhere.new(:license_code => @lic_code).lookup_uri.should match /license_code=#{@lic_code}/
     end
 
   end
