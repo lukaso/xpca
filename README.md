@@ -17,6 +17,7 @@ on your MacBook
 
 As a one-off, clone _your_ version of the `xpca` project, and add _my_ version as one of its remotes:
 
+    cd ~/Workarea # or any other directory where you keep your projects...
     git clone git@github.com:YOUR-GITHUB-USERNAME/xpca.git
     cd xpca
     git remote add upstream git://github.com/pvdb/xpca.git
