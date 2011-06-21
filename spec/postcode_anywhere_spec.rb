@@ -31,19 +31,19 @@ describe PostcodeAnywhere do
 
   end
 
-  describe "the PostcodeAnywhere license_key method" do
+  describe "the PostcodeAnywhere license_code method" do
 
     it "should be implemented" do
-      PostcodeAnywhere.new.should respond_to(:license_key).with(0).arguments
+      PostcodeAnywhere.new.should respond_to(:license_code).with(0).arguments
     end
 
     it "shoud return nil by default" do
-      PostcodeAnywhere.new.license_key.should be nil
+      PostcodeAnywhere.new.license_code.should be nil
     end
 
     it "should configure itself from the options hash" do
       lic_key = "AA00-BB11-CC22-DD33"
-      PostcodeAnywhere.new(:license_key => lic_key).license_key.should eq lic_key
+      PostcodeAnywhere.new(:license_code => lic_key).license_code.should eq lic_key
     end
 
   end

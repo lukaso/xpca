@@ -1,6 +1,6 @@
 base: &base
     account_code: XXXXX00000
-    license_key: AA00-BB11-CC22-DD33
+    license_code: AA00-BB11-CC22-DD33
 
 development: &base
 test: &base
