@@ -66,6 +66,10 @@ describe PostcodeAnywhere do
       PostcodeAnywhere.new(:license_code => @lic_code).lookup_uri.should match /license_code=#{@lic_code}/
     end
 
+    it "should include the lookup action" do
+      PostcodeAnywhere.new.lookup_uri.should match /action=lookup/
+    end
+
   end
 
   describe "the PostcodeAnywhere fetch_uri method" do
@@ -80,6 +84,10 @@ describe PostcodeAnywhere do
 
     it "should include the license code" do
       PostcodeAnywhere.new(:license_code => @lic_code).fetch_uri.should match /license_code=#{@lic_code}/
+    end
+
+    it "should include the fetch action" do
+      PostcodeAnywhere.new.fetch_uri.should match /action=fetch/
     end
 
   end
