@@ -1,0 +1,10 @@
+['autotest/fsevent', 'autotest/growl'].each { |gem| require gem }
+
+Autotest.add_hook :initialize do |autotest|
+  %w{ .git .autotest .DS_Store log public Gemfile Gemfile.lock LICENSE.txt Rakefile README.md VERSION }.each do |exception|
+    autotest.add_exception(exception)
+  end
+  false
+end
+
+# vim:syntax=ruby

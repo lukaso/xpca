@@ -27,6 +27,12 @@ Then, going forward, you can fetch and merge the latest changes from the main `x
     git fetch upstream
     git merge upstream/master
 
+getting started
+---------------
+
+    gem install bundler
+    bundle install --system
+
 implementing your solution
 --------------------------
 
