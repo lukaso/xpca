@@ -68,4 +68,20 @@ describe PostcodeAnywhere do
 
   end
 
+  describe "the PostcodeAnywhere fetch_uri method" do
+
+    it "should be implemented" do
+      PostcodeAnywhere.new.should respond_to(:fetch_uri).with(0).arguments
+    end
+
+    it "should include the account code" do
+      PostcodeAnywhere.new(:account_code => @acc_code).fetch_uri.should match /account_code=#{@acc_code}/
+    end
+
+    it "should include the license code" do
+      PostcodeAnywhere.new(:license_code => @lic_code).fetch_uri.should match /license_code=#{@lic_code}/
+    end
+
+  end
+
 end
