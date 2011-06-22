@@ -2,9 +2,13 @@ GEM
   remote: http://rubygems.org/
   specs:
     ZenTest (4.5.0)
+    autotest (4.4.6)
+      ZenTest (>= 4.4.1)
     autotest-fsevent (0.2.5)
       sys-uname
     autotest-growl (0.2.9)
+    autotest-notification (2.3.1)
+      autotest (~> 4.3)
     diff-lcs (1.1.2)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
@@ -22,6 +26,8 @@ PLATFORMS
 
 DEPENDENCIES
   ZenTest
+  autotest
   autotest-fsevent
   autotest-growl
+  autotest-notification
   rspec
